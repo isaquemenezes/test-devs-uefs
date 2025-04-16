@@ -1,4 +1,44 @@
 # Teste Técnico para a vaga de Engenheiro de Software no projeto UEFS - Netra
+```
+php artisan key:generate
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Teste Técnico para a vaga de Engenheiro de Software no projeto UEFS - Netra
 
 Este desafio técnico é destinado aos candidatos à posição de Engenheiro de Software no projeto UEFS - NETRA. O objetivo é avaliar competências práticas em desenvolvimento de software por meio da criação de uma API RESTful utilizando PHP (Laravel 8 ou superior), um Sistema de Gerenciamento de Banco de Dados (SGBD) de sua escolha, e Docker.
 
