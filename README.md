@@ -3,6 +3,18 @@
 php artisan key:generate
 ```
 
+# API
+
+## Tags
+1 - Testar a associação
+    1.1 POST /api/posts/1/tags
+    ```
+    {
+        "tags": [1, 2]
+    }
+    ```
+
+
 
 
 

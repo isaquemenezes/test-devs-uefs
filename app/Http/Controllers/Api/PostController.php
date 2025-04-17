@@ -25,10 +25,19 @@ class PostController extends Controller
         return response()->json($post, 201);
     }
 
+    /*
+    * Ver as Tags de um Post, juntamente com os users
+    *
+    */
+
     public function show(Post $post)
     {
-        return $post->load('user');
+        return $post->load([
+            'user',
+            'tags'
+        ]);
     }
+
 
     public function update(Request $request, Post $post)
     {
@@ -47,5 +56,23 @@ class PostController extends Controller
         $post->delete();
 
         return response()->json(null, 204);
+    }
+
+    /* Associar Tags a um Post
+    *
+    *
+    *
+    */
+
+    public function syncTags(Request $request, Post $post)
+    {
+        $data = $request->validate([
+            'tags' => 'required|array',
+            'tags.*' => 'exists:tags,id',
+        ]);
+
+        $post->tags()->sync($data['tags']);
+
+        return $post->load('tags');
     }
 }
