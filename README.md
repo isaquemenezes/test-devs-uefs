@@ -51,15 +51,6 @@ curl http://127.0.0.1:8000/
 3. CRUD de **Tags** :heavy_check_mark: <br>
 4. Tests Funcionalidades (requisições) Api :heavy_check_mark: <br>
 
-## Testes Unitários com PHPUnit
-```
-php artisan test
-```
-ou Direto com PHPUnit
-```
-vendor/bin/phpunit
-```
-
 # Api Endpoint
 
 ## Users
@@ -105,6 +96,19 @@ vendor/bin/phpunit
         "tags": [1, 2]
     }
     ```
+
+## Testes Unitários com PHPUnit
+```
+php artisan test
+```
+ou Direto com PHPUnit
+```
+vendor/bin/phpunit
+```
+1. Testes Específicos
+```
+php artisan test --filter=PostApiTest
+```
 
 
 ## Notas
