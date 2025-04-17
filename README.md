@@ -1,6 +1,27 @@
-# Teste Técnico para a vaga de Engenheiro de Software no projeto UEFS - Netra
+# App Api 
+
+## Docker 
+1. Suba os container
 ```
-php artisan key:generate
+docker-compose up -d --build
+```
+2. Acesse 
+ ```
+ docker-compose exec app bash
+ ```
+3. Baixe as dependencias
+```
+Composer install
+```
+
+4. Execute as migrates
+```
+php artisan migrate
+```
+
+5. (Opcional) Rode as seeds:
+```
+php artisan db:seed
 ```
 
 # API
@@ -12,7 +33,6 @@ php artisan key:generate
     {
         "tags": [1, 2]
     }
-    ```
 
 
 
