@@ -98,12 +98,13 @@ vendor/bin/phpunit
 - **DELETE** api/tags/{id} — Deletar uma tag.
 
 
-1 - Testar a associação
+1. - Testar a associação
     1.1 **POST** /api/posts/1/tags
     ```
     {
         "tags": [1, 2]
     }
+    ```
 
 
 ## Notas
