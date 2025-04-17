@@ -4,40 +4,57 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
+use App\Services\UserService;
 
 class UserController extends Controller
 {
+
+    public function __construct(
+        protected UserService $userService
+    ) {}
+
+
     public function index()
     {
         return User::all();
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
-        $request->validate([
-            'name' => 'required|string',
+        try {
+            $user = $this->userService->create($request->all());
 
-        ]);
-        $user = User::create([
-            'name' => $request->name,
-
-        ]);
-        return response()->json($user, 201);
+            return response()->json(
+                $user,
+                201
+            );
+        } catch (\RuntimeException $e) {
+            return response()->json([
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
 
-    public function show($id)
+    public function show(int $id): JsonResponse
     {
-        return User::findOrFail($id);
+        try {
+            $user = $this->userService->findById($id);
+
+            return response()->json($user);
+        } catch (\DomainException $e) {
+            return response()->json([
+                'error' => $e->getMessage(),
+            ], 404);
+        }
     }
 
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->update(
-            $request->only(
-                ['name', 'email']
-            )
-        );
+        $user->update( $request->only( ['name'] ) );
+
         return response()->json($user);
     }
 

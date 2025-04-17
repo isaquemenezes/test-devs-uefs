@@ -64,17 +64,20 @@ curl http://127.0.0.1:8000/
 ```
 - **GET** api/users/{id} — Exibir detalhes de um usuário.
 - **PUT/PATCH** api/users/{id} — Atualizar um usuário existente.
-```
-{
-    "nome": "Pessoa Teste Editado" 
-}
-```
 - **DELETE** api/users/{id} — Deletar um usuário.
 
 ## Posts
  
 - **GET** api/posts — Listar todos os postss.
-- **POST** api/posts — Criar um novo posts
+- **POST** api/posts — Criar um novo posts vinculado ao usuário
+```
+{
+  "user_id": 1,
+  "title": "Título do post",
+  "body": "Conteúdo do post"
+}
+```
+
 - **GET** api/posts/{id} — Exibir detalhes de um posts.
 - **PUT/PATCH** api/posts/{id} — Atualizar um posts existente.
 - **DELETE** api/posts/{id} — Deletar um posts.
@@ -97,7 +100,7 @@ curl http://127.0.0.1:8000/
     }
     ```
 
-## Testes Unitários com PHPUnit
+## Testes com PHPUnit
 ```
 php artisan test
 ```
@@ -108,6 +111,11 @@ vendor/bin/phpunit
 1. Testes Específicos
 ```
 php artisan test --filter=PostApiTest
+```
+
+2. Teste no banco do container
+```
+docker compose exec app php artisan test
 ```
 
 
