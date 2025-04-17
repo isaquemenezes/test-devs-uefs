@@ -1,7 +1,15 @@
 # App Api 
 
+## Clone o Repositório e acesse 
+```
+git clone https://github.com/isaquemenezes/test-devs-uefs.git
+cd test-devs-uefs
+```
+
+## Atualize as variáveis de ambiente do arquivo .env e Configure seu Banco favorito(aqui estamos com Postgres):
+
 ## Docker 
-1. Suba os container
+1. Suba os containers do projeto
 ```
 docker-compose up -d --build
 ```
@@ -9,31 +17,112 @@ docker-compose up -d --build
  ```
  docker-compose exec app bash
  ```
-3. Baixe as dependencias
+
+3. Instalar as dependências
 ```
-Composer install
+composer install
 ```
 
-4. Execute as migrates
+4. Gerar a key do projeto Laravel
+```
+php artisan key:generate
+```
+
+5. Execute as migrates
 ```
 php artisan migrate
 ```
 
-5. (Opcional) Rode as seeds:
+6. (Opcional) Rode as seeds:
 ```
 php artisan db:seed
 ```
 
 # API
+## Teste a Aplicação | navegador| Postman| Ferramenta como o curl:
+```
+curl http://127.0.0.1:8000/
+```
+
+## Funcionalidades Implementadas 🚀
+
+1. CRUD de **Usuários** :heavy_check_mark: <br> 
+2. CRUD de **Posts** :heavy_check_mark: <br>
+3. CRUD de **Tags** :heavy_check_mark: <br>
+4. Tests Funcionalidades (requisições) Api :heavy_check_mark: <br>
+
+## Testes Unitários com PHPUnit
+```
+php artisan test
+```
+ou Direto com PHPUnit
+```
+vendor/bin/phpunit
+```
+
+# Api Endpoint
+
+## Users
+
+- **GET** api/users — Listar todos os usuários.
+- **POST** api/users — Criar um novo usuário
+```
+{
+    "name": "Pessoa Teste"
+}
+```
+- **GET** api/users/{id} — Exibir detalhes de um usuário.
+- **PUT/PATCH** api/users/{id} — Atualizar um usuário existente.
+```
+{
+    "nome": "Pessoa Teste Editado" 
+}
+```
+- **DELETE** api/users/{id} — Deletar um usuário.
+
+## Posts
+ 
+- **GET** api/posts — Listar todos os postss.
+- **POST** api/posts — Criar um novo posts
+- **GET** api/posts/{id} — Exibir detalhes de um posts.
+- **PUT/PATCH** api/posts/{id} — Atualizar um posts existente.
+- **DELETE** api/posts/{id} — Deletar um posts.
+
 
 ## Tags
+
+- **GET** api/tags — Listar todas as tagss.
+- **POST** api/tags — Criar uma nova tags
+- **GET** api/tags/{id} — Exibir detalhes de uma tags.
+- **PUT/PATCH** api/tags/{id} — Atualizar uma tags existente.
+- **DELETE** api/tags/{id} — Deletar uma tag.
+
+
 1 - Testar a associação
-    1.1 POST /api/posts/1/tags
+    1.1 **POST** /api/posts/1/tags
     ```
     {
         "tags": [1, 2]
     }
 
+
+## Notas
+1. :warning: Atente Para testes via json(Postman) 
+- Accept application/json
+- Content-Type application/json
+
+### Tecnologias :books:
+
+- [Postman](https://www.postman.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
+- [GiHub](https://github.com/)
+- [Laravel | 9](https://laravel.com/)
+- [PHP | 8.2 ](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
+- [Docker](https://docs.docker.com//)
+- [WSL](https://learn.microsoft.com/pt-br/windows/wsl/install/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 
 
