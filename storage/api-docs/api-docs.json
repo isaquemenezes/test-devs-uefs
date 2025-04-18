@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "API CRUD Usários,Posts e Tags",
+        "title": "API CRUD Usuários,Posts e Tags",
         "description": "Documentação da API com Swagger",
         "contact": {
             "email": "contato@dominio.com"
@@ -612,7 +612,7 @@
             },
             "Tag": {
                 "title": "Tag",
-                "description": "Informações de uma tag",
+                "description": "Modelo de uma tag",
                 "properties": {
                     "id": {
                         "type": "integer",
@@ -637,7 +637,7 @@
             },
             "User": {
                 "title": "Usuário",
-                "description": "Informações do usuário",
+                "description": "Modelo de um usuário",
                 "properties": {
                     "id": {
                         "type": "integer",
