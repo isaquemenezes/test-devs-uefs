@@ -113,7 +113,7 @@ vendor/bin/phpunit
 php artisan test --filter=PostApiTest
 ```
 
-2. Teste no banco do container
+2. Teste pelo container
 ```
 docker compose exec app php artisan test
 ```
@@ -136,6 +136,7 @@ docker compose exec app php artisan test
 - [Docker](https://docs.docker.com//)
 - [WSL](https://learn.microsoft.com/pt-br/windows/wsl/install/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Swagger](https://swagger.io/)
 
 
 
