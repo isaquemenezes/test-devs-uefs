@@ -6,12 +6,12 @@ git clone https://github.com/isaquemenezes/test-devs-uefs.git
 cd test-devs-uefs
 ```
 
-## Atualize as variáveis de ambiente do arquivo .env e Configure seu Banco favorito(aqui estamos com Postgres):
+## Atualize as variáveis de ambiente do arquivo .env e Configure o Banco (Postgres):
 
 ## Docker 
-1. Suba os containers do projeto
+1. Crie os containers do projeto
 ```
-docker-compose up -d --build
+docker-compose up -d
 ```
 2. Acesse 
  ```
