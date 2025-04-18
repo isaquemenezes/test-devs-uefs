@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 /**
  * @OA\Info(
  *     version="1.0.0",
- *     title="API CRUD Usários,Posts e Tags",
+ *     title="API CRUD Usuários,Posts e Tags",
  *     description="Documentação da API com Swagger",
  *     @OA\Contact(
  *         email="contato@dominio.com"
